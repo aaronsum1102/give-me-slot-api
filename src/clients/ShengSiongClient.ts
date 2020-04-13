@@ -8,8 +8,9 @@ interface ShengSiongRequestBody {
 
 interface ShengSiongResponse extends ClientResponse {
   data?: {
-    result: string;
+    result: any;
     response: string;
+    succMessage?: string;
   };
 }
 
