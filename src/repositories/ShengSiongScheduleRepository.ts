@@ -11,12 +11,10 @@ export default class ShengSiongScheduleRepository {
   private readonly shengSiongClient = new ShengSiongClient();
 
   private getDateTime(date: string, time: string): string {
-    let slotDate = moment(new Date(date))
-      .tz("Asia/Singapore")
+    let slotDate = moment.tz(new Date(date), "Asia/Singapore")
       .year(moment().year())
       .format("YYYY-MM-DD");
-    return moment(`${slotDate} ${time}`, "YYYY-MM-DD HH:mm")
-      .tz("Asia/Singapore")
+    return moment.tz(`${slotDate} ${time}`, "YYYY-MM-DD HH:mm","Asia/Singapore")
       .format();
   }
 
