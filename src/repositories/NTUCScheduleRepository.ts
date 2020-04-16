@@ -1,7 +1,7 @@
-import NTUCClient from "../clients/NTUCClient";
-import Schedule from "../models/Schedule";
-import Slot from "../models/Slot";
-import { Vendor } from "../enum/Vendor";
+import NTUCClient from '../clients/NTUCClient';
+import Schedule from '../models/Schedule';
+import Slot from '../models/Slot';
+import { Vendor } from '../enum/Vendor';
 
 export default class NTUCScheduleRepository {
   private readonly client = new NTUCClient();
@@ -17,19 +17,19 @@ export default class NTUCScheduleRepository {
           let slotsInDay = slot[date].map(
             (slot) => new Slot(slot.startTime, slot.endTime, slot.available)
           );
-          slots.push(slotsInDay);
+          slots = slots.concat(slotsInDay);
         });
-        //slots = slots.filter((s) => s.isAvailable);
+        slots = slots.filter((s) => s.isAvailable);
         return new Schedule(Vendor.NTUC, slots);
       } else if (response?.error) {
         console.error(
-          "NTUCScheduleRepository_getAvailableSlots",
+          'NTUCScheduleRepository_getAvailableSlots',
           response.error
         );
         throw Error(response.error);
       }
     } catch (err) {
-      console.error("NTUCScheduleRepository_getAvailableSlots", err);
+      console.error('NTUCScheduleRepository_getAvailableSlots', err);
       throw new Error(err);
     }
   }
