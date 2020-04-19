@@ -19,7 +19,6 @@ export default class NTUCScheduleRepository {
           );
           slots = slots.concat(slotsInDay);
         });
-        slots = slots.filter((s) => s.isAvailable);
         return new Schedule(Vendor.NTUC, slots);
       } else if (response?.error) {
         console.error(
