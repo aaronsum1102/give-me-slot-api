@@ -9,7 +9,7 @@ schedulesRouter.get("/:postalCode", async (req: Request, res: Response) => {
     const result = await scheduleEngine.getSchedule(req.params.postalCode);
     res.status(200).json(result);
   } catch (error) {
-    res.status(400).send(error.message);
+    res.status(400).json(error.message);
   }
 });
 
@@ -22,7 +22,7 @@ schedulesRouter.get(
       );
       res.status(200).json(result);
     } catch (error) {
-      res.status(400).send(error.message);
+      res.status(400).json(error.message);
     }
   }
 );
@@ -36,7 +36,7 @@ schedulesRouter.get(
       );
       res.status(200).json(result);
     } catch (error) {
-      res.status(400).send(error.message);
+      res.status(400).json(error.message);
     }
   }
 );
