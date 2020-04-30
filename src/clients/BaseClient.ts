@@ -1,16 +1,16 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import ClientResponse from "../models/clientResponse.interface";
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import ClientResponse from '../models/clientResponse.interface';
 
 class BaseClient {
   private getConfig(): AxiosRequestConfig {
     return {
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
     };
   }
 
-  private processResponse(response: AxiosResponse): ClientResponse {
+  protected processResponse(response: AxiosResponse): ClientResponse {
     return {
       status: true,
       code: response.status,
@@ -18,12 +18,12 @@ class BaseClient {
     };
   }
 
-  private processError(response: AxiosResponse): ClientResponse {
-    console.error("BaseClient_processError", response);
+  protected processError(response: AxiosResponse): ClientResponse {
+    console.error('BaseClient_processError', response);
     return {
       status: false,
       code: response.status,
-      error: "something went wrong",
+      error: 'something went wrong',
     };
   }
 
