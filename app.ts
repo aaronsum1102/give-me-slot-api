@@ -10,7 +10,8 @@ const app = express();
 app.use(express.json());
 var allowedOrigins = [
   'http://localhost:8080',
-  'https://give-me-slot.herokuapp.com',
+  'http://give-me-slot.herokuapp.com',
+  'https://give-me-slot.herokuapp.com'
 ];
 app.use(
   cors({
