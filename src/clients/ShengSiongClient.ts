@@ -1,10 +1,5 @@
-import BaseClient from "./BaseClient";
-import ClientResponse from "../models/clientResponse.interface";
-
-interface ShengSiongRequestBody {
-  pinStatus: string;
-  code: string;
-}
+import BaseClient from './BaseClient';
+import ClientResponse from '../models/clientResponse.interface';
 
 interface ShengSiongResponse extends ClientResponse {
   data?: {
@@ -15,13 +10,13 @@ interface ShengSiongResponse extends ClientResponse {
 }
 
 class ShengSiongClient extends BaseClient {
-  private readonly baseUrl = "https://www.allforyou.sg/Common";
+  private readonly baseUrl = 'https://www.allforyou.sg/Common';
 
   async getSlot(postalCode: string): Promise<ShengSiongResponse> {
     const url = `${this.baseUrl}/pinCodeSearch`;
     return await this.post(url, {
-      pinStatus: "1",
-      code: postalCode,
+      pinStatus: '1',
+      code: postalCode
     });
   }
 }

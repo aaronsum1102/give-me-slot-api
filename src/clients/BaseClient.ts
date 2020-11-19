@@ -5,8 +5,8 @@ class BaseClient {
   private getConfig(): AxiosRequestConfig {
     return {
       headers: {
-        'Content-Type': 'application/json',
-      },
+        'Content-Type': 'application/json'
+      }
     };
   }
 
@@ -14,7 +14,7 @@ class BaseClient {
     return {
       status: true,
       code: response.status,
-      data: response.data,
+      data: response.data
     };
   }
 
@@ -23,7 +23,7 @@ class BaseClient {
     return {
       status: false,
       code: response.status,
-      error: 'something went wrong',
+      error: 'something went wrong'
     };
   }
 
