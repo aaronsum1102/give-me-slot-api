@@ -22,10 +22,7 @@ export default class GiantColdStorageRepository {
   }
 
   private getDateTime(date: string, timeLabel: string): string {
-    return moment
-      .tz(date, 'Asia/Singapore')
-      .hour(this.convertTimeTo24Hr(timeLabel))
-      .format();
+    return moment.tz(date, 'Asia/Singapore').hour(this.convertTimeTo24Hr(timeLabel)).format();
   }
 
   private processSlot(date: string, slot: any): Slot {
@@ -36,14 +33,14 @@ export default class GiantColdStorageRepository {
     const endHour = label.match(timeRegex)[1];
     const startDateTime = this.getDateTime(date, startHour);
     const endDateTime = this.getDateTime(date, endHour);
-    let result = new Slot(startDateTime, endDateTime, isAvailable);
+    const result = new Slot(startDateTime, endDateTime, isAvailable);
     return result;
   }
 
   private sortSlots(slots: Slot[]): Slot[] {
     return slots.sort((as, bs) => {
-      let asMoment = moment(as.startTime);
-      let bsMoment = moment(bs.startTime);
+      const asMoment = moment(as.startTime);
+      const bsMoment = moment(bs.startTime);
       if (asMoment.isBefore(bsMoment)) {
         return -1;
       }
@@ -54,17 +51,14 @@ export default class GiantColdStorageRepository {
     });
   }
 
-  private async getSlots(
-    postalCode: string,
-    vendor: Vendor
-  ): Promise<Schedule> {
+  private async getSlots(postalCode: string, vendor: Vendor): Promise<Schedule> {
     try {
       const result = await this.client.getSlot(postalCode, vendor);
       if (result?.data) {
-        let slot = result.data.timeslot;
+        const slot = result.data.timeslot;
         let slots: Slot[] = [];
         Object.keys(slot).forEach((date) => {
-          let slotsInDay = Object.values(slot[date]).map((slot) =>
+          const slotsInDay = Object.values(slot[`${date}`]).map((slot) =>
             this.processSlot(date, slot)
           );
           slots = slots.concat(slotsInDay);

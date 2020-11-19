@@ -1,5 +1,5 @@
-import { Vendor } from "../enum/Vendor";
-import Slot from "./Slot";
+import { Vendor } from '../enum/Vendor';
+import Slot from './Slot';
 
 export class Schedule {
   id: Vendor;

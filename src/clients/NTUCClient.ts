@@ -5,8 +5,8 @@ export default class NTUCClient extends BaseClient {
   private readonly baseUrl = 'https://website-api.omni.fairprice.com.sg/api';
 
   async getDeliveryStoreId(postalCode: string): Promise<string> {
-    let url = `${this.baseUrl}/serviceable-area?city=Singapore&pincode=${postalCode}`;
-    let response = await this.get(url);
+    const url = `${this.baseUrl}/serviceable-area?city=Singapore&pincode=${postalCode}`;
+    const response = await this.get(url);
     if (response?.data) {
       if (response.data?.data) {
         return response.data.data.zone.storeId;
@@ -21,17 +21,17 @@ export default class NTUCClient extends BaseClient {
   }
 
   async getSlots(postalCode: string, storeId: string): Promise<ClientResponse> {
-    let url = `${this.baseUrl}/checkout`;
-    let payload = {
+    const url = `${this.baseUrl}/checkout`;
+    const payload = {
       address: {
-        pincode: postalCode,
+        pincode: postalCode
       },
       storeId: `${storeId}`,
       cart: {
-        items: [],
-      },
+        items: []
+      }
     };
-    let response = await this.post(url, payload);
+    const response = await this.post(url, payload);
     return response;
   }
 }

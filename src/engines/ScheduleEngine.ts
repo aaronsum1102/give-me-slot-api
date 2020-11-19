@@ -30,7 +30,7 @@ export default class ScheduleEngine {
       this.getNTUCSchedule(postalCode),
       this.getShengSiongSchedule(postalCode),
       this.getGiantSchedule(postalCode),
-      this.getColdStorageSchedule(postalCode),
+      this.getColdStorageSchedule(postalCode)
     ]);
     return result;
   }
