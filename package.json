@@ -8,7 +8,7 @@
     "dev": "webpack --mode=development && node dist/index.js",
     "run:dev": "NODE_ENV=development nodemon dist/index.js",
     "start": "ynode dist/index.js",
-    "heroku-postbuild": "webpack --mode=production -p",
+    "heroku-postbuild": "yarn build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
