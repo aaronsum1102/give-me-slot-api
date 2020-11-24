@@ -10,7 +10,10 @@
     "start": "yarn build && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": {
+    "name": "Shao Xiang Sum",
+    "email": "sumsx03@gmail.com"
+  },
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.6",
