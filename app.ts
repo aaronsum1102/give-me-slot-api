@@ -1,7 +1,7 @@
 // setup server
 import express from 'express';
 import cors from 'cors';
-import * as config from './package.json';
+import { version } from './package.json';
 import { schedulesRouter } from './src/controllers/scheduleController';
 import { settingsRouter } from './src/controllers/settingsController';
 
@@ -29,7 +29,7 @@ app.use(
 );
 app.disable('x-powered-by');
 const port = process.env.PORT || 4000;
-const version = config.version;
+// const version = config.version;
 
 // setup routes
 app.get('/', (req, res) =>

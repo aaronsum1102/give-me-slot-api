@@ -1,12 +1,13 @@
 {
   "root": true,
-  "extends": ["eslint:recommended", "plugin:security/recommended"],
+  "extends": ["eslint:recommended", "plugin:jest/recommended", "plugin:security/recommended"],
   "env": {
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest/globals": true
   },
   "parser": "babel-eslint",
-  "plugins": ["prettier", "security"],
+  "plugins": ["prettier", "jest", "security"],
   "parserOptions": {
     "ecmaVersion": 9,
     "sourceType": "module",
