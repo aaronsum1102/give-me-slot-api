@@ -1,7 +1,7 @@
 import GiantColdStorageClient from '../clients/GiantColdStorageClient';
 import Schedule from '../models/Schedule';
 import Slot from '../models/Slot';
-import { Vendor } from '../enum/Vendor';
+import { Vendor } from '../constants/Vendor';
 import moment from 'moment-timezone';
 
 export default class GiantColdStorageRepository {

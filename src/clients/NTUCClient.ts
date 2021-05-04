@@ -1,8 +1,9 @@
 import BaseClient from './BaseClient';
 import ClientResponse from '../models/clientResponse.interface';
+import { ClientUrls } from '../constants';
 
 export default class NTUCClient extends BaseClient {
-  private readonly baseUrl = 'https://website-api.omni.fairprice.com.sg/api';
+  private readonly baseUrl = ClientUrls.NTUC;
 
   async getDeliveryStoreId(postalCode: string): Promise<string> {
     const url = `${this.baseUrl}/serviceable-area?city=Singapore&pincode=${postalCode}`;

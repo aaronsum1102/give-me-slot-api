@@ -1,0 +1,46 @@
+{
+  "vendors": {
+    "NTUC": {
+      "id": "NTUC",
+      "name": "Fairprice",
+      "link": "https://www.fairprice.com.sg/cart"
+    },
+    "ShengSiong": {
+      "id": "ShengSiong",
+      "name": "Sheng Siong",
+      "link": "https://www.allforyou.sg/cart"
+    },
+    "Giant": {
+      "id": "Giant",
+      "name": "Giant",
+      "link": "https://giant.sg/checkout/cart"
+    },
+    "ColdStorage": {
+      "id": "ColdStorage",
+      "name": "Cold Storage",
+      "link": "https://coldstorage.com.sg/checkout/cart"
+    }
+  },
+  "queryStatus": {
+    "NTUC": {
+      "isLoading": false,
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "ShengSiong": {
+      "isLoading": false,
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "Giant": {
+      "isLoading": false,
+      "startDateTime": null,
+      "endDateTime": null
+    },
+    "ColdStorage": {
+      "isLoading": false,
+      "startDateTime": null,
+      "endDateTime": null
+    }
+  }
+}

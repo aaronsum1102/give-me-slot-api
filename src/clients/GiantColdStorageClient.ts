@@ -1,13 +1,13 @@
 import { RequestInit } from 'node-fetch';
 import BaseClient from './BaseClient';
 import ClientResponse from '../models/clientResponse.interface';
-import { Vendor } from '../enum/Vendor';
+import { Vendor, ClientUrls } from '../constants';
 
 export default class GiantColdStorageClient extends BaseClient {
-  private readonly giantBaseUrl = 'https://giant.sg/checkout/cart/checkdelivery';
-  private readonly coldStorageBaseUrl = 'https://coldstorage.com.sg/checkout/cart/checkdelivery';
+  private readonly giantBaseUrl = ClientUrls.Giant;
+  private readonly coldStorageBaseUrl = ClientUrls.ColdStorage;
 
-  async getSlot(postalCode: string, vendor: Vendor): Promise<ClientResponse> {
+  async getSlot(postalCode: string, vendor: string): Promise<ClientResponse> {
     let url = '';
     switch (vendor) {
       case Vendor.ColdStorage:

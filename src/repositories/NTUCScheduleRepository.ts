@@ -1,7 +1,7 @@
 import NTUCClient from '../clients/NTUCClient';
 import Schedule from '../models/Schedule';
 import Slot from '../models/Slot';
-import { Vendor } from '../enum/Vendor';
+import { Vendor } from '../constants/Vendor';
 
 export default class NTUCScheduleRepository {
   private readonly client = new NTUCClient();

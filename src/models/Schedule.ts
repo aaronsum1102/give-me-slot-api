@@ -1,11 +1,10 @@
-import { Vendor } from '../enum/Vendor';
 import Slot from './Slot';
 
 export class Schedule {
-  id: Vendor;
+  id: string;
   slots: Slot[];
 
-  constructor(id: Vendor, slots: Slot[]) {
+  constructor(id: string, slots: Slot[]) {
     this.id = id;
     this.slots = slots;
   }
