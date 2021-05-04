@@ -1,5 +1,6 @@
 import BaseClient from './BaseClient';
 import ClientResponse from '../models/clientResponse.interface';
+import { ClientUrls } from '../constants';
 
 interface ShengSiongResponse extends ClientResponse {
   data?: {
@@ -10,7 +11,7 @@ interface ShengSiongResponse extends ClientResponse {
 }
 
 class ShengSiongClient extends BaseClient {
-  private readonly baseUrl = 'https://www.allforyou.sg/Common';
+  private readonly baseUrl = ClientUrls.ShengSiong;
 
   async getSlot(postalCode: string): Promise<ShengSiongResponse> {
     const url = `${this.baseUrl}/pinCodeSearch`;
