@@ -11,18 +11,16 @@ export default class NTUCClient extends BaseClient {
       if (response.data?.data) {
         return response.data.data.zone.storeId;
       } else {
-        console.error('NTUCClient_getDeliveryStoreId', 'Invalid postal code.');
         throw new Error('Invalid postal code.');
       }
     } else if (response?.error) {
-      console.error('NTUCClient_getDeliveryStoreId', response.error);
       throw new Error(response.error);
     }
   }
 
   async getSlots(postalCode: string, storeId: string): Promise<ClientResponse> {
     const url = `${this.baseUrl}/checkout`;
-    const payload = {
+    const body = JSON.stringify({
       address: {
         pincode: postalCode
       },
@@ -30,8 +28,8 @@ export default class NTUCClient extends BaseClient {
       cart: {
         items: []
       }
-    };
-    const response = await this.post(url, payload);
+    });
+    const response = await this.post(url, { body });
     return response;
   }
 }

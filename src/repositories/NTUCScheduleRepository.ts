@@ -21,11 +21,9 @@ export default class NTUCScheduleRepository {
         });
         return new Schedule(Vendor.NTUC, slots);
       } else if (response?.error) {
-        console.error('NTUCScheduleRepository_getAvailableSlots', response.error);
         throw Error(response.error);
       }
     } catch (err) {
-      console.error('NTUCScheduleRepository_getAvailableSlots', err);
       throw new Error(err);
     }
   }

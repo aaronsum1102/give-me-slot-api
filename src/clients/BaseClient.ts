@@ -1,8 +1,8 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from 'axios';
+import fetch, { Response, RequestInfo, RequestInit } from 'node-fetch';
 import ClientResponse from '../models/clientResponse.interface';
 
 class BaseClient {
-  private getConfig(): AxiosRequestConfig {
+  private getConfig(): RequestInit {
     return {
       headers: {
         'Content-Type': 'application/json'
@@ -10,16 +10,16 @@ class BaseClient {
     };
   }
 
-  protected processResponse(response: AxiosResponse): ClientResponse {
+  protected async processResponse(response: Response): Promise<ClientResponse> {
+    const data = await response.json();
     return {
       status: true,
       code: response.status,
-      data: response.data
+      data: data
     };
   }
 
-  protected processError(response: AxiosResponse): ClientResponse {
-    console.error('BaseClient_processError', response);
+  protected processError(response: Response): ClientResponse {
     return {
       status: false,
       code: response.status,
@@ -27,18 +27,22 @@ class BaseClient {
     };
   }
 
-  protected async get(url: string): Promise<ClientResponse> {
+  protected async get(url: RequestInfo): Promise<ClientResponse> {
     try {
-      const response = await axios.get(url);
+      const response = await fetch(url);
       return this.processResponse(response);
     } catch (error) {
       return this.processError(error);
     }
   }
 
-  protected async post(url: string, body?: any): Promise<ClientResponse> {
+  protected async post(url: RequestInfo, init?: RequestInit): Promise<ClientResponse> {
     try {
-      const response = await axios.post(url, body, this.getConfig());
+      const response = await fetch(url, {
+        method: 'POST',
+        ...this.getConfig(),
+        ...init
+      });
       return this.processResponse(response);
     } catch (error) {
       return this.processError(error);
