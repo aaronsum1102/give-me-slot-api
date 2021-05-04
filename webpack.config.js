@@ -23,6 +23,7 @@ module.exports = {
       }
     ]
   },
+  externalsPresets: { node: true },
   externals: [nodeExternals()],
   resolve: {
     extensions: ['.ts', '.js']

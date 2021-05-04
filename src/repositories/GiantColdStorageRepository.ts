@@ -66,7 +66,6 @@ export default class GiantColdStorageRepository {
         return new Schedule(vendor, this.sortSlots(slots));
       }
     } catch (err) {
-      console.error('getGiantAvailableSlots', err);
       throw new Error(err);
     }
   }

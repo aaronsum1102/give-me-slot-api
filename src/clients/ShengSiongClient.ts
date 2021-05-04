@@ -14,10 +14,11 @@ class ShengSiongClient extends BaseClient {
 
   async getSlot(postalCode: string): Promise<ShengSiongResponse> {
     const url = `${this.baseUrl}/pinCodeSearch`;
-    return await this.post(url, {
+    const body = JSON.stringify({
       pinStatus: '1',
       code: postalCode
     });
+    return await this.post(url, { body });
   }
 }
 
