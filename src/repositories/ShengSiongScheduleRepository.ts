@@ -41,6 +41,7 @@ export default class ShengSiongScheduleRepository {
 
   async getDeliverySchedule(postalCode: string): Promise<Schedule> {
     const ssResponse = await this.shengSiongClient.getSlot(postalCode);
+
     return this.processResponse(Vendor.ShengSiong, ssResponse);
   }
 }
