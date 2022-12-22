@@ -5,7 +5,9 @@
   "engines": {
     "node": "16.x"
   },
+  "main": "api/index.ts",
   "scripts": {
+    "build": "yarn vercel build",
     "dev": "vercel dev --listen 5050",
     "start": "node --insecure-http-parser .esbuild/index.js",
     "test": "jest"
