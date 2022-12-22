@@ -5,5 +5,5 @@ require('esbuild').buildSync({
   treeShaking: true,
   platform: 'node',
   target: ['node16'],
-  outfile: '.esbuild/index.js'
+  outfile: '.esbuild/api/index.js'
 });

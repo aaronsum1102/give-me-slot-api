@@ -5,7 +5,6 @@
   "engines": {
     "node": "16.x"
   },
-  "main": "api/index.ts",
   "scripts": {
     "build": "node esbuild.js",
     "dev": "vercel dev --listen 5050",
