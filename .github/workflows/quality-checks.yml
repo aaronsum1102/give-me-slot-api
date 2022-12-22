@@ -27,4 +27,3 @@ jobs:
         run: yarn install --frozen-lockfile
       - name: Audit dependencies and eslint check
         run: yarn audit
-      - run: yarn lint
