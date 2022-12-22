@@ -15,7 +15,14 @@ module.exports = {
     ]
   ],
   rootDir: './',
-  transform: { '^.+\\.m?(ts|js)$': 'ts-jest' },
+  transform: {
+    '^.+\\.m?(ts|js)$': [
+      'esbuild-jest',
+      {
+        sourcemap: true
+      }
+    ]
+  },
   collectCoverageFrom: ['src/**/*.(ts|js|mjs)'],
   testMatch: ['<rootDir>/tests/**/*.test.+(ts|js)']
 };
