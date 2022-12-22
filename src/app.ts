@@ -1,18 +1,14 @@
 // setup server
 import express from 'express';
 import cors from 'cors';
-import { version } from './package.json';
-import { schedulesRouter } from './src/controllers/scheduleController';
-import { settingsRouter } from './src/controllers/settingsController';
+import { version } from '../package.json';
+import { schedulesRouter } from './controllers/scheduleController';
+import { settingsRouter } from './controllers/settingsController';
 
 const app = express();
 
 app.use(express.json());
-const allowedOrigins = [
-  'http://localhost:8080',
-  'http://give-me-slot.herokuapp.com',
-  'https://give-me-slot.herokuapp.com'
-];
+const allowedOrigins = ['http://localhost:8080'];
 app.use(
   cors({
     origin: function (origin, callback) {
@@ -28,7 +24,6 @@ app.use(
 );
 app.disable('x-powered-by');
 const port = process.env.PORT || 4000;
-// const version = config.version;
 
 // setup routes
 app.get('/', (req, res) =>

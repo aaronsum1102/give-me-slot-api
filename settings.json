@@ -5,11 +5,6 @@
       "name": "Fairprice",
       "link": "https://www.fairprice.com.sg/cart"
     },
-    "Giant": {
-      "id": "Giant",
-      "name": "Giant",
-      "link": "https://giant.sg/checkout/cart"
-    },
     "ColdStorage": {
       "id": "ColdStorage",
       "name": "Cold Storage",
@@ -18,11 +13,6 @@
   },
   "queryStatus": {
     "NTUC": {
-      "isLoading": false,
-      "startDateTime": null,
-      "endDateTime": null
-    },
-    "Giant": {
       "isLoading": false,
       "startDateTime": null,
       "endDateTime": null

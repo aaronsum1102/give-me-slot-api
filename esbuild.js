@@ -1,9 +1,9 @@
 require('esbuild').buildSync({
-  entryPoints: ['app.ts'],
+  entryPoints: ['src/app.ts'],
   bundle: true,
   minify: true,
   treeShaking: true,
   platform: 'node',
-  target: ['node14'],
+  target: ['node16'],
   outfile: '.esbuild/index.js'
 });
