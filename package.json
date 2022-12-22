@@ -2,19 +2,17 @@
   "name": "give-me-slot",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
   "engines": {
     "node": "16.x"
   },
   "scripts": {
-    "build": "node esbuild.js",
-    "dev": "yarn build && node --insecure-http-parser .esbuild/index.js",
+    "dev": "vercel dev --listen 5050",
     "start": "node --insecure-http-parser .esbuild/index.js",
     "test": "jest"
   },
   "author": {
     "name": "Shao Xiang Sum",
-    "email": "sumsx03@gmail.com"
+    "email": "aaronsum.dev@gmail.com"
   },
   "license": "ISC",
   "dependencies": {
@@ -34,7 +32,6 @@
     "@typescript-eslint/eslint-plugin": "^5.47.0",
     "@typescript-eslint/parser": "^5.47.0",
     "babel-eslint": "^10.1.0",
-    "esbuild": "^0.16.10",
     "esbuild-jest": "^0.5.0",
     "eslint": "^8.30.0",
     "eslint-plugin-jest": "^27.1.7",
@@ -44,6 +41,6 @@
     "jest-junit": "^15.0.0",
     "prettier": "^2.1.2",
     "swagger-ui-express": "^4.0.7",
-    "typescript": "^4.0.5"
+    "typescript": "^4.9.4"
   }
 }
