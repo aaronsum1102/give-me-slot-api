@@ -24,6 +24,7 @@ export default class NTUCScheduleRepository {
         throw Error(response.error);
       }
     } catch (err) {
+      console.error('Failed to get slot from NTUC', err);
       throw new Error(err);
     }
   }

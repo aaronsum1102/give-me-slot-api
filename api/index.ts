@@ -30,9 +30,7 @@ app.disable('x-powered-by');
 const port = process.env.PORT || 4000;
 
 // setup routes
-app.get('/', (_, res) =>
-  res.send(`GiveMeSlot api version: ${version} is running at port ${port}...`)
-);
+app.get('/', (_, res) => res.send(`GiveMeSlot api version: ${version} is running...`));
 app.use('/schedules', schedulesRouter);
 app.use('/settings', settingsRouter);
 

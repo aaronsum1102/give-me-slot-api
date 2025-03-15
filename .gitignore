@@ -133,3 +133,4 @@ test-reports
 
 .esbuild
 .vercel
+.env*.local

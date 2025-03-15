@@ -1,6 +1,6 @@
 export const ClientUrls = {
-  NTUC: 'https://website-api.omni.fairprice.com.sg/api',
-  Giant: 'https://giant.sg/checkout/cart/checkdelivery',
-  ColdStorage: 'https://coldstorage.com.sg/checkout/cart/checkdelivery',
-  ShengSiong: 'https://www.allforyou.sg/Common'
+  NTUC: process.env.CLIENT_NTUC,
+  Giant: process.env.CLIENT_GIANT,
+  ColdStorage: process.env.COLD_STORAGE,
+  ShengSiong: process.env.CLIENT_SHENG_SIONG
 };
