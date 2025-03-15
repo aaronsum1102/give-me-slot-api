@@ -27,10 +27,10 @@ export default class ScheduleEngine {
   async getSchedule(postalCode: string): Promise<Schedule[]> {
     let result: Schedule[] = [];
     result = await Promise.all([
-      this.getNTUCSchedule(postalCode),
-      this.getShengSiongSchedule(postalCode),
-      this.getGiantSchedule(postalCode),
-      this.getColdStorageSchedule(postalCode)
+      this.getNTUCSchedule(postalCode)
+      // this.getShengSiongSchedule(postalCode),
+      // this.getGiantSchedule(postalCode),
+      // this.getColdStorageSchedule(postalCode)
     ]);
     return result;
   }

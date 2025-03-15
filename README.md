@@ -1,6 +1,6 @@
 # give-me-slot
 
-Proxy API to get available delivery slots for 4 major grocery chain in Singpopre based on postal code.
+Proxy API to get available delivery slots for 4 major grocery chain in Singapore based on postal code.
 
 ## Try it out
 

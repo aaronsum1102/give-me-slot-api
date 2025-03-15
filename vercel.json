@@ -1,4 +1,5 @@
 {
-  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }],
-  "outputDirectory": ".esbuild"
+  "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
+
+  "regions": ["sgp1"]
 }
