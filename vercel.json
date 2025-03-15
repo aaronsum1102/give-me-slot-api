@@ -1,4 +1,4 @@
 {
   "rewrites": [{ "source": "/(.*)", "destination": "/api" }],
-  "regions": ["arn1", "sin1"]
+  "regions": ["sin1"]
 }
