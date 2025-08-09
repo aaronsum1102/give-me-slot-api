@@ -3,7 +3,8 @@ name: Quality checks
 on:
   pull_request:
     branches: [master, dev]
-
+  workflow_dispatch:
+  
 jobs:
   checks:
     runs-on: ubuntu-latest
